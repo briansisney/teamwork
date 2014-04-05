@@ -18,8 +18,8 @@ describe "assignments/index" do
 
   it "renders a list of assignments" do
     render
-    assert_select "tr>td", :text => nil.to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
+    assert_select "tr>td", :text => nil.to_s, :count => 10
+    assert_select "tr>td", :text => nil.to_s, :count => 10
+    assert_select "tr>td", :text => nil.to_s, :count => 10
   end
 end

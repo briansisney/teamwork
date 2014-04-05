@@ -23,7 +23,16 @@ describe AssignmentsController do
   # This should return the minimal set of attributes required to create a valid
   # Assignment. As you add validations to Assignment, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "user" => "" } }
+  let(:reference_models) do
+    User.create(name:"Brian")
+    User.create(name:"Steve")
+    Client.create(name: "Client")
+    Role.create(name: "Role")
+  end
+  let(:valid_attributes) do 
+    reference_models
+    { user_id: User.first.id, client_id: Client.first.id, role_id: Role.first.id } 
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -106,8 +115,8 @@ describe AssignmentsController do
         # specifies that the Assignment created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        expect_any_instance_of(Assignment).to receive(:update).with({ "user" => "" })
-        put :update, {:id => assignment.to_param, :assignment => { "user" => "" }}, valid_session
+        expect_any_instance_of(Assignment).to receive(:update).with({ user_id: User.last.id.to_s }.with_indifferent_access)
+        put :update, {:id => assignment.to_param, :assignment => { user_id: User.last.id }}, valid_session
       end
 
       it "assigns the requested assignment as @assignment" do

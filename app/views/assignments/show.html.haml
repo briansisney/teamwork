@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @assignment.user
+%p
+  %b Client:
+  = @assignment.client
+%p
+  %b Role:
+  = @assignment.role
+%p
+  %b Start date:
+  = @assignment.start_date
+%p
+  %b End time:
+  = @assignment.end_time
+
+= link_to 'Edit', edit_assignment_path(@assignment)
+\|
+= link_to 'Back', assignments_path

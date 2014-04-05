@@ -1,4 +1,6 @@
 Teamwork::Application.routes.draw do
+  root 'users#index'
+
   resources :assignments
 
   resources :roles

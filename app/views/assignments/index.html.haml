@@ -10,18 +10,11 @@
     %th
     %th
     %th
-
+  
   - @assignments.each do |assignment|
-    %tr
-      %td= assignment.user
-      %td= assignment.client
-      %td= assignment.role
-      %td= assignment.start_date
-      %td= assignment.end_time
-      %td= link_to 'Show', assignment
-      %td= link_to 'Edit', edit_assignment_path(assignment)
-      %td= link_to 'Destroy', assignment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    =render "assignments/assignment", assignment: assignment
 
 %br
 
-= link_to 'New Assignment', new_assignment_path
+/ = link_to 'New Assignment', new_assignment_path
+= render 'assignments/form'

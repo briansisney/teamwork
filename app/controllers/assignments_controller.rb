@@ -5,6 +5,10 @@ class AssignmentsController < ApplicationController
   # GET /assignments.json
   def index
     @assignments = Assignment.all
+    @assignment = Assignment.new
+    @roles = Role.all
+    @users = User.all
+    @clients = Client.all
   end
 
   # GET /assignments/1
@@ -25,11 +29,14 @@ class AssignmentsController < ApplicationController
   # POST /assignments.json
   def create
     @assignment = Assignment.new(assignment_params)
-
+    @roles = Role.all
+    @users = User.all
+    @clients = Client.all
     respond_to do |format|
       if @assignment.save
         format.html { redirect_to @assignment, notice: 'Assignment was successfully created.' }
         format.json { render action: 'show', status: :created, location: @assignment }
+        format.js { render layout: false }
       else
         format.html { render action: 'new' }
         format.json { render json: @assignment.errors, status: :unprocessable_entity }
@@ -69,6 +76,6 @@ class AssignmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def assignment_params
-      params.require(:assignment).permit(:user_id, :client_id, :role_id, :start_date, :end_time)
+      params.require(:assignment).permit(:user_id, :client_id, :role_id, :user, :client, :role, :start_date, :end_time)
     end
 end

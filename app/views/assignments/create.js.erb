@@ -1,0 +1,8 @@
+(function () {
+  var assignmentHtml = "<%= j render(partial: 'assignment', locals: {assignment: @assignment})%>";
+  $('table').append(assignmentHtml);
+  $('#new_assignment')[0].reset();
+  $('.user_form_wrapper').removeClass('selected_role');
+  $('.role_form_wrapper').removeClass('selected_role');
+  $('.client_form_wrapper').removeClass('selected_role');
+})();

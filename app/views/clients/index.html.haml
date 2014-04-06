@@ -1,19 +1,42 @@
-%h1 Listing clients
-
-%table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
-
+.row
+  %h1 Listing clients
+.row
   - @clients.each do |client|
-    %tr
-      %td= client.name
-      %td= link_to 'Show', client
-      %td= link_to 'Edit', edit_client_path(client)
-      %td= link_to 'Destroy', client, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .col-xs-6.col-md-3
+      .pane
+        %i.fa.fa-briefcase.form-icon 
+        %h4= client.name
+        =client.users.count
+        team members
+        %br
+        %button.btn.btn-primary{"data-target" => "#clientModal", "data-toggle" => "modal"}
+          modal
+        = link_to 'Show', client
+        =render 'clients/modal', client: client   
+  .col-xs-6.col-md-3
+    = link_to new_client_path do
+      .pane
+        %i.fa.fa-briefcase.form-icon 
+        %h4 New Client
 
-%br
 
-= link_to 'New Client', new_client_path
+        
+
+
+/ %table
+/   %tr
+/     %th Name
+/     %th
+/     %th
+/     %th
+
+  
+/     %tr
+/       %td
+/       %td
+/       %td= link_to 'Edit', edit_client_path(client)
+/       %td= link_to 'Destroy', client, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+/ %br
+
+

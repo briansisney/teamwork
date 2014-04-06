@@ -12,6 +12,7 @@ end
 # date/time parser
 gem 'chronic'
 
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'pry'

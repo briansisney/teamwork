@@ -68,6 +68,8 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.0.2)
+    font-awesome-sass (4.0.3.1)
+      sass (~> 3.2)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -183,6 +185,7 @@ DEPENDENCIES
   chronic
   coffee-rails (~> 4.0.0)
   devise
+  font-awesome-sass
   haml (~> 4.0.5)
   haml-rails
   hirb

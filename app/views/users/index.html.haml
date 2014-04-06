@@ -1,22 +1,13 @@
-%h1 Listing users
-
-%table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
-
+%h1 Users
+.userlist
   - @users.each do |user|
-    %tr
-      %td= user.name
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    =render 'users/user', user: user
+  %br
 
-%br
+%button.btn.col-md-2.pane{"data-toggle" => "modal", "data-target" => "#newUserModal"}
+  %i.fa.fa-user.form-icon 
+  %h4 New User
+=render 'users/modal'
 
-= link_to 'New User', new_user_path
-%button.btn.btn-primary.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal"}
-  Launch demo modal
-=render 'users/modal' 
+
+  

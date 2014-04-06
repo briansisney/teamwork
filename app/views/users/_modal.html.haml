@@ -1,15 +1,23 @@
-#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+#newUserModal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1", "aria-labelledby" => "newuserModalLabel"}
   .modal-dialog
     .modal-content
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
-        %h4.modal-title New Role
-      .modal-body
-        =render "users/form"
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-        / %button.btn.btn-primary{:type => "button"} Save changes
-    / /.modal-content
-  / /.modal-dialog
-/ /.modal
-
+        %h4.modal-title New User
+      = form_for @user, remote: true do |f|
+        .modal-body  
+          - if @user.errors.any?
+            #error_explanation
+              %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+              %ul
+                - @user.errors.full_messages.each do |msg|
+                  %li= msg
+          .field
+            = f.label :name
+            = f.text_field :name
+      
+        .modal-footer
+          .actions
+            %button.btn.btn-primary
+              Save
+            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close

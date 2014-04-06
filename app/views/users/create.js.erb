@@ -1,0 +1,7 @@
+(function () {
+  var newuserHtml = "<%= j render(partial: 'user', locals: {user: @user})%>";
+  $('.userlist').append(newuserHtml);
+  $('#user_name').val('');
+  $('#newUserModal').modal('hide');
+})();
+

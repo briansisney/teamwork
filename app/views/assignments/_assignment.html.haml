@@ -1,6 +1,6 @@
 %tr{:class => row_color(assignment.end_time)}
-  %td= assignment.user.name
-  %td= assignment.client.name
+  %td=link_to(assignment.user.name, user_path(assignment.user))
+  %td=link_to(assignment.client.name, client_path(assignment.client)) 
   %td= assignment.role.name
   %td= readable_date(assignment.start_date)
   %td= readable_date(assignment.end_time)

@@ -13,26 +13,26 @@
     
     -@users.each do |user|
       .user_form_wrapper
-        %h6=user.name
+        =user.name
         = assign.radio_button(:user_id, user.id, :class => "form_button")
+    =link_to("New User", users_path, :class => "user_form_wrapper")
   .field
 
     = assign.label :client
     / = assign.text_field :client
     -@clients.each do |client|
       .client_form_wrapper
-        %h6=client.name
+        =client.name
         = assign.radio_button(:client_id, client.id, :class => "form_button")
+    =link_to("New Client", clients_path, :class => "client_form_wrapper")
   .field
 
     = assign.label :role
     -@roles.each do |role|
       .role_form_wrapper
-        .role_form_wrapper
-          %h6=role.name
-          = assign.radio_button(:role_id, role.id, :class => "form_button")
-    .role_form_wrapper
-      =link_to("New Role", roles_path)
+        =role.name
+        = assign.radio_button(:role_id, role.id, :class => "form_button")
+    =link_to("New Role", roles_path, :class => "role_form_wrapper")
     
        
   .field

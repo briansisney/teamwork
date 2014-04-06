@@ -4,11 +4,11 @@ class AssignmentsController < ApplicationController
   # GET /assignments
   # GET /assignments.json
   def index
-    @assignments = Assignment.all
+    @assignments = Assignment.all.order(:end_time)
     @assignment = Assignment.new
-    @roles = Role.all
-    @users = User.all
-    @clients = Client.all
+    @roles = Role.all.order(:name)
+    @users = User.all.order(:name)
+    @clients = Client.all.order(:name)
     @role = Role.new
   end
 

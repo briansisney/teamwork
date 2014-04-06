@@ -11,6 +11,11 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
+    @assignments = Assignment.all.order(:end_time)
+    @assignment = Assignment.new
+    @roles = Role.all.order(:name)
+    @users = User.all.order(:name)
+    @role = Role.new
   end
 
   # GET /clients/new

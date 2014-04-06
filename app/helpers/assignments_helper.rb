@@ -14,6 +14,12 @@ module AssignmentsHelper
   end
 
   def readable_date(date)
-    date.strftime("%B %d, %Y") unless date.nil? 
+    if date.nil? 
+      "Ongoing"
+    else
+      date.strftime("%B %d, %Y") 
+    end
+    
   end
 end
+

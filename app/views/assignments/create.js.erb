@@ -1,5 +1,5 @@
 (function () {
-  var assignmentHtml = "<%= j render(partial: 'assignment', locals: {assignment: @assignment})%>";
+  var assignmentHtml = "<%= j render(partial: 'clients/assignment', locals: {assignment: @assignment})%>";
   $('table').append(assignmentHtml);
   $('#new_assignment')[0].reset();
   $('.user_form_wrapper').removeClass('selected_role');

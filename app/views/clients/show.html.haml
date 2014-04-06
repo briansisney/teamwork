@@ -1,8 +1,26 @@
-%p#notice= notice
+.row
+  .col-md-1
+    %h1.fa.fa-briefcase
+    / image_proof(@client.image)
+  .col-md-10
+    %h1=@client.name
+.row
+  .col-md-6
+    %h4 Current Assignments
+    %table.table.table-condensed
+      %tr
+        %th User
+        %th Role
+        %th Start date
+        %th End time
+        %th
+      
+      - @client.assignments.each do |assignment|
+        =render "clients/assignment", assignment: assignment    
+  .col-md-6
+    %h4 Make Assignment
+    =render 'clients/assignmentform' 
 
-%p
-  %b Name:
-  = @client.name
 
 = link_to 'Edit', edit_client_path(@client)
 \|

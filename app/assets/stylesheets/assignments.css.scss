@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .form_button{
-  // display: none;
+  display: none;
 }
 
+h4{
+  color: black;
+}
 
 .role_form_wrapper,.client_form_wrapper, .user_form_wrapper {
   // display: inline-block;

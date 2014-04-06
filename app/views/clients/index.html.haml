@@ -1,24 +1,14 @@
 .row
   %h1 Listing clients
-.row
+.row.clientlist
   - @clients.each do |client|
-    .col-xs-6.col-md-3
-      .pane
-        %i.fa.fa-briefcase.form-icon 
-        %h4= client.name
-        =client.users.count
-        team members
-        %br
-        %button.btn.btn-primary{"data-target" => "##{dom_id(client, :infos)}", "data-toggle" => "modal"}
-          modal
-        = link_to 'Show', client
-        =render 'clients/modal', client: client   
+    =render 'clients/client', client: client  
   .col-xs-6.col-md-3
-    = link_to new_client_path do
-      .pane
-        %i.fa.fa-briefcase.form-icon 
-        %h4 New Client
-
+    %button.btn.pane{"data-toggle" => "modal", "data-target" => "#newClientModal"}
+      
+      %i.fa.fa-briefcase.form-icon 
+      %h4 New Client
+    =render 'clients/newclientmodal'
 
         
 

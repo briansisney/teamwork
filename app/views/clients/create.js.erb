@@ -1,0 +1,7 @@
+(function () {
+  var newclientHtml = "<%= j render(partial: 'client', locals: {client: @client})%>";
+  $('.clientlist').append(newclientHtml);
+  $('#client_name').val('');
+  $('#newClientModal').modal('hide');
+  // $('#new_role')[0].reset();
+})();

@@ -9,7 +9,7 @@
         =client.users.count
         team members
         %br
-        %button.btn.btn-primary{"data-target" => "#clientModal", "data-toggle" => "modal"}
+        %button.btn.btn-primary{"data-target" => "##{dom_id(client, :infos)}", "data-toggle" => "modal"}
           modal
         = link_to 'Show', client
         =render 'clients/modal', client: client   

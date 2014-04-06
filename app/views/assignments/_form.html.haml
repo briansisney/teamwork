@@ -32,8 +32,10 @@
         = f.radio_button(:role_id, role.id, :class => "form_button")
         / %button.btn.btn-primary.btn-block=role.name
         / %button.btn.btn-info{:type => "button"}
-          
-
+    .role_form_wrapper
+      %button.btn.btn-warning.btn-block{"data-target" => "#myModal", "data-toggle" => "modal"}
+        New Role
+       
   .field
     = f.label :start_date
     = f.datetime_select :start_date
@@ -42,3 +44,4 @@
     = f.datetime_select :end_time
   .actions
     = f.submit 'Save'
+=render 'roles/modal' 

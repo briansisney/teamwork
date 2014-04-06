@@ -9,6 +9,7 @@ class AssignmentsController < ApplicationController
     @roles = Role.all
     @users = User.all
     @clients = Client.all
+    @role = Role.new
   end
 
   # GET /assignments/1

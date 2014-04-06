@@ -1,0 +1,7 @@
+.modal.fade{:id => dom_id(user, :infos), "aria-hidden" => "true", "aria-labelledby" => dom_id(user, :infos), :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      =render 'users/info', user: user      
+
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close

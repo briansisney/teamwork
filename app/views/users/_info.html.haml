@@ -1,0 +1,8 @@
+.modal-header
+  %h1=user.name
+  %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
+.modal-body
+  -user.assignments.each do |assignment|
+    .row
+      .col-md-6=assignment.client.name
+      .col-md-6=assignment.role.name 

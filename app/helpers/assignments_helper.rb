@@ -4,9 +4,9 @@ module AssignmentsHelper
 
     if end_date.nil?
       "info" 
-    elsif end_date < now + 7.days 
+    elsif end_date < now + 14.days && end_date > now
       "warning"
-    elsif end_date > now + 7.days
+    elsif end_date > now + 14.days
       "success"
     elsif end_date < now
       "danger"  

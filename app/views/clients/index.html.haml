@@ -1,8 +1,9 @@
 .row
   %h1 Listing clients
-.row.clientlist
-  - @clients.each do |client|
-    =render 'clients/client', client: client  
+.row
+  .clientlist
+    - @clients.each do |client|
+      =render 'clients/client', client: client  
   .col-xs-6.col-md-3
     %button.btn.pane{"data-toggle" => "modal", "data-target" => "#newClientModal"}
       

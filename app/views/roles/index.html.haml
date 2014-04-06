@@ -15,5 +15,8 @@
       %td= link_to 'Destroy', role, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
+%a{"data-target" => "#roleModal", "data-toggle" => "modal"}
+  New Role
 
-= link_to 'New Role', new_role_path
+=render 'roles/modal'
+/ = link_to 'New Role', new_role_path

@@ -1,4 +1,4 @@
-= form_for @assignment, remote: true do |f|
+= form_for @assignment, remote: true do |assign|
   - if @assignment.errors.any?
     #error_explanation
       %h2= "#{pluralize(@assignment.errors.count, "error")} prohibited this assignment from being saved:"
@@ -8,40 +8,38 @@
 
   .field
   
-    = f.label :user
-    / = f.text_field :user
+    = assign.label :user
+    / = assign.text_field :user
     
     -@users.each do |user|
       .user_form_wrapper
         %h6=user.name
-        = f.radio_button(:user_id, user.id, :class => "form_button")
+        = assign.radio_button(:user_id, user.id, :class => "form_button")
   .field
 
-    = f.label :client
-    / = f.text_field :client
+    = assign.label :client
+    / = assign.text_field :client
     -@clients.each do |client|
       .client_form_wrapper
         %h6=client.name
-        = f.radio_button(:client_id, client.id, :class => "form_button")
+        = assign.radio_button(:client_id, client.id, :class => "form_button")
   .field
 
-    = f.label :role
+    = assign.label :role
     -@roles.each do |role|
       .role_form_wrapper
-        %h6=role.name
-        = f.radio_button(:role_id, role.id, :class => "form_button")
-        / %button.btn.btn-primary.btn-block=role.name
-        / %button.btn.btn-info{:type => "button"}
+        .role_form_wrapper
+          %h6=role.name
+          = assign.radio_button(:role_id, role.id, :class => "form_button")
     .role_form_wrapper
-      %button.btn.btn-warning.btn-block{"data-target" => "#myModal", "data-toggle" => "modal"}
-        New Role
+      =link_to("New Role", roles_path)
+    
        
   .field
-    = f.label :start_date
-    = f.datetime_select :start_date
+    = assign.label :start_date
+    = assign.datetime_select :start_date
   .field
-    = f.label :end_time
-    = f.datetime_select :end_time
+    = assign.label :end_time
+    = assign.datetime_select :end_time
   .actions
-    = f.submit 'Save'
-=render 'roles/modal' 
+    = assign.submit 'Save'

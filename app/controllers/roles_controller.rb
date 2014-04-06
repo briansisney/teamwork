@@ -5,6 +5,7 @@ class RolesController < ApplicationController
   # GET /roles.json
   def index
     @roles = Role.all
+    @role = Role.new
   end
 
   # GET /roles/1
@@ -30,6 +31,7 @@ class RolesController < ApplicationController
       if @role.save
         format.html { redirect_to @role, notice: 'Role was successfully created.' }
         format.json { render action: 'show', status: :created, location: @role }
+        format.js { render layout: false }
       else
         format.html { render action: 'new' }
         format.json { render json: @role.errors, status: :unprocessable_entity }

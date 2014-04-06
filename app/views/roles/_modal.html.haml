@@ -1,16 +1,32 @@
-#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+#roleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "roleModalLabel", :role => "dialog", :tabindex => "-1"}
   .modal-dialog
     .modal-content
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
         %h4.modal-title New Role
-      .modal-body
-        =render "roles/form"
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-        / %button.btn.btn-primary{:type => "button"} Save changes
+      
+      = form_for @role, remote: true do |f|
+        .modal-body
+          - if @role.errors.any?
+            #error_explanation
+              %h2= "#{pluralize(@role.errors.count, "error")} prohibited this role from being saved:"
+              %ul
+                - @role.errors.full_messages.each do |msg|
+                  %li= msg
+
+          .field
+            = f.label :name
+            = f.text_field :name
+        .modal-footer
+          .actions
+            %button.btn.btn-primary
+              Save
+            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+          
+            
+        
     / /.modal-content
   / /.modal-dialog
 / /.modal
 
-
+/ %button.btn.btn-primary{:type => "button"}

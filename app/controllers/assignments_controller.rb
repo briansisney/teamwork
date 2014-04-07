@@ -32,7 +32,6 @@ class AssignmentsController < ApplicationController
   def create
     if params[:free_system_input].present?
       new_role = Role.create(name: params[:free_system_input])
-      @f = params[:f]
     end  
     @assignment = Assignment.new(assignment_params)
     if @assignment.role_id.nil?

@@ -25,10 +25,11 @@
         .role_form_wrapper
           =role.name
           = f.radio_button(:role_id, role.id, :class => "form_button")
-      Other:
+      .role_form_wrapper    
+        Other:
       = f.radio_button :role, nil, :id => :hidden_radio, :style => "display:none"
       = text_field_tag :free_system_input
-      / =link_to("New Role", roles_path, :class => "role_form_wrapper")
+
        
   .field
     .start_time
@@ -37,4 +38,4 @@
     .end_time
       = f.label :end_time
       = f.date_field :end_time, :class => "inline"
-  %button.btn.btn-default{:type => "submit"} Save
+  %button.btn.btn-default.formsubmit{:type => "submit"} Save

@@ -19,6 +19,10 @@ $(document).on('ready page:load', function() {
   });
 });
 
+ $("free_system_input").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+
 
 // $(document).ready(function() {
 //   $('.user_form_wrapper').click(function() {

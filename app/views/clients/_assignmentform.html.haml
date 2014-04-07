@@ -1,4 +1,4 @@
-= form_for @assignment, remote: true do |assign|
+= form_for @assignment, remote: true do |f|
   - if @assignment.errors.any?
     #error_explanation
       %h2= "#{pluralize(@assignment.errors.count, "error")} prohibited this assignment from being saved:"
@@ -6,30 +6,35 @@
         - @assignment.errors.full_messages.each do |msg|
           %li= msg
   .field  
-    = assign.label :user
-    / = assign.text_field :user
+    = f.label :user
+    / = f.text_field :user
     .user_section
       -@users.each do |user|
         .user_form_wrapper
           =user.name
-          = assign.radio_button(:user_id, user.id, :class => "form_button")
+          = f.radio_button(:user_id, user.id, :class => "form_button")
       =link_to("New User", users_path, :class => "user_form_wrapper")
   .field
-    =assign.hidden_field :client_id, value: @client.id
-  .field
+    =f.hidden_field :client_id, value: @client.id
 
-    = assign.label :role
+  .field
+    
+    = f.label :role
     .role_section
       -@roles.each do |role|
         .role_form_wrapper
           =role.name
-          = assign.radio_button(:role_id, role.id, :class => "form_button")
-      =link_to("New Role", roles_path, :class => "role_form_wrapper")  
+          = f.radio_button(:role_id, role.id, :class => "form_button")
+      Other:
+      = f.radio_button :role, nil, :id => :hidden_radio, :style => "display:none"
+      = text_field_tag :free_system_input
+      / =link_to("New Role", roles_path, :class => "role_form_wrapper")
+       
   .field
     .start_time
-      = assign.label :start_date
-      = assign.date_field :start_date, :class => "inline", :value => Time.now.strftime("%Y-%m-%d")
+      = f.label :start_date
+      = f.date_field :start_date, :class => "inline", :value => Time.now.strftime("%Y-%m-%d")
     .end_time
-      = assign.label :end_time
-      = assign.date_field :end_time, :class => "inline"
+      = f.label :end_time
+      = f.date_field :end_time, :class => "inline"
   %button.btn.btn-default{:type => "submit"} Save

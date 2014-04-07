@@ -10,6 +10,7 @@ class AssignmentsController < ApplicationController
     @users = User.all.order(:name)
     @clients = Client.all.order(:name)
     @role = Role.new
+
   end
 
   # GET /assignments/1
@@ -29,7 +30,14 @@ class AssignmentsController < ApplicationController
   # POST /assignments
   # POST /assignments.json
   def create
+    if params[:free_system_input].present?
+      new_role = Role.create(name: params[:free_system_input])
+      @f = params[:f]
+    end  
     @assignment = Assignment.new(assignment_params)
+    if @assignment.role_id.nil?
+      @assignment.role_id = new_role.id
+    end
     @roles = Role.all
     @users = User.all
     @clients = Client.all
@@ -77,6 +85,6 @@ class AssignmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def assignment_params
-      params.require(:assignment).permit(:user_id, :client_id, :role_id, :user, :client, :role, :start_date, :end_time)
+      params.require(:assignment).permit(:user_id, :client_id, :role_id, :user, :client, :start_date, :end_time, :free_system_input)
     end
 end

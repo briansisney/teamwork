@@ -24,7 +24,7 @@
         .role_form_wrapper
           =role.name
           = assign.radio_button(:role_id, role.id, :class => "form_button")
-      =link_to("New Role", roles_path, :class => "role_form_wrapper")     
+      =link_to("New Role", roles_path, :class => "role_form_wrapper")  
   .field
     .start_time
       = assign.label :start_date

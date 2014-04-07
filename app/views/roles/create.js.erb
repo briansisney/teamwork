@@ -2,6 +2,8 @@
 (function () {
   var roleHtml = "<%= j render(partial: 'role', locals: {role: @role})%>";
   $('table').append(roleHtml);
+  $('#role_name').val('');
+  $('#roleModal').modal('hide');
   // $('#new_role')[0].reset();
 })();
 

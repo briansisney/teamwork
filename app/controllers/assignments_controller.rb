@@ -30,13 +30,11 @@ class AssignmentsController < ApplicationController
   # POST /assignments
   # POST /assignments.json
   def create
+    @assignment = Assignment.new(assignment_params)
     if params[:free_system_input].present?
       new_role = Role.create(name: params[:free_system_input])
-    end  
-    @assignment = Assignment.new(assignment_params)
-    if @assignment.role_id.nil?
       @assignment.role_id = new_role.id
-    end
+    end  
     @roles = Role.all
     @users = User.all
     @clients = Client.all

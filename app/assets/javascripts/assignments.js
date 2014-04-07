@@ -10,13 +10,15 @@ $(document).on('ready page:load', function() {
     $('.client_form_wrapper').removeClass('selected_role');
     $(this).addClass('selected_role');
   });
-  $('.role_form_wrapper').click(function() {
+  $('.role_section').on('click','.clickable_role' ,function() {
+    $('.role_section').find('#free_system_input').val('')
     $(this).find('input:radio').prop("checked", true);
-    $('.role_form_wrapper').removeClass('selected_role');
+    $('.clickable_role').removeClass('selected_role');
     $(this).addClass('selected_role');
   });
 });
 
  $("free_system_input").keyup(function(){
-   $("hidden_radio").val($(this).val())
+  $('.role_form_wrapper').prop('checked', false)
+  $("hidden_radio").val($(this).val())
  })

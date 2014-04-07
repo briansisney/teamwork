@@ -10,7 +10,7 @@
   <% last_role = Role.last %>
   <% if  last_role == @assignment.role &&  Time.now - last_role.created_at < 1 %>
     var roleHtml = "<%= j render(partial: 'assignments/newrole')%>"
-    $(".role_section").append(roleHtml);
+    $(".original_roles").append(roleHtml);
   <% end %>
   
 

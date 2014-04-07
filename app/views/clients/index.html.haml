@@ -4,12 +4,11 @@
   .clientlist
     - @clients.each do |client|
       =render 'clients/client', client: client  
-  .col-xs-6.col-md-3
-    %button.btn.pane{"data-toggle" => "modal", "data-target" => "#newClientModal"}
+  %button.col-md-2.pane{"data-toggle" => "modal", "data-target" => "#newClientModal"}
       
-      %i.fa.fa-briefcase.form-icon 
-      %h4 New Client
-    =render 'clients/newclientmodal'
+    %i.fa.fa-briefcase.form-icon 
+    %h4 New Client
+  =render 'clients/newclientmodal'
 
         
 

@@ -1,6 +1,6 @@
 (function () {
 
-  var assignmentHtml = "<%= j render(partial: 'clients/assignment', locals: {assignment: @assignment})%>";
+  var assignmentHtml = "<%= j render(partial: 'assignments/assignment', locals: {assignment: @assignment})%>";
   $('.assignment_<%= @assignment.id%>').replaceWith(assignmentHtml);
   <% last_role = Role.last %>
   <% if  last_role == @assignment.role &&  Time.now - last_role.created_at < 1 %>

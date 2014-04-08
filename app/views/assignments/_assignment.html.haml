@@ -1,9 +1,0 @@
-%tr{:class => row_color(assignment.end_time)}
-  %td=link_to(assignment.user.name, user_path(assignment.user))
-  %td=link_to(assignment.client.name, client_path(assignment.client)) 
-  %td= assignment.role.name
-  %td= readable_date(assignment.start_date)
-  %td= readable_date(assignment.end_time)
-  %td= link_to 'Show', assignment
-  %td= link_to 'Edit', edit_assignment_path(assignment)
-  %td= link_to 'Destroy', assignment, :method => :delete, :data => { :confirm => 'Are you sure?' }

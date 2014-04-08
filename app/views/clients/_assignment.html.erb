@@ -1,0 +1,20 @@
+<tr class="<%= row_color(assignment.end_time) %> assignment_<%=assignment.id%>">
+  <td>
+    <%= link_to(assignment.user.name, user_path(assignment.user)) %>
+  </td>
+  <td>
+    <%= assignment.role.name %>
+  </td>
+  <td>
+    <%= readable_date(assignment.start_date) %>
+  </td>
+  <td>
+    <%= readable_date(assignment.end_time) %>
+  </td>
+  <td>
+    <a data-target="#editAssignmentModal" data-toggle="modal" data-remote="<%= edit_assignment_path(assignment) %> #modal-edit-fields" class="fa fa-pencil"></a>
+    <%= link_to assignment, :method => :delete, :data => { :confirm => 'Are you sure?' } do %>
+      <i class="fa fa-times"></i>
+    <% end %>
+  </td>
+</tr>

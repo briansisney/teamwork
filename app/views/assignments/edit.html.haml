@@ -1,7 +1,10 @@
-%h1 Editing assignment
-
-= render 'form'
-
-= link_to 'Show', @assignment
-\|
-= link_to 'Back', assignments_path
+#modal-edit-fields
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
+        %h4.modal-title Edit Assignment
+      .modal-body 
+        =render 'clients/assignmentform', assignment: @assignment, client: @client, users: @users, roles: @roles
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close

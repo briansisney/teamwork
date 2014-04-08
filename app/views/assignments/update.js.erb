@@ -1,0 +1,14 @@
+(function () {
+
+  var assignmentHtml = "<%= j render(partial: 'clients/assignment', locals: {assignment: @assignment})%>";
+  $('.assignment_<%= @assignment.id%>').replaceWith(assignmentHtml);
+  <% last_role = Role.last %>
+  <% if  last_role == @assignment.role &&  Time.now - last_role.created_at < 1 %>
+    var roleHtml = "<%= j render(partial: 'assignments/newrole')%>"
+    $(".original_roles").append(roleHtml);
+  <% end %>
+  $('#free_system_input').val('');
+  $('#editAssignmentModal').modal('hide');
+
+  
+})();

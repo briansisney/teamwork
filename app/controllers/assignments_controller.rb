@@ -25,6 +25,10 @@ class AssignmentsController < ApplicationController
 
   # GET /assignments/1/edit
   def edit
+    @assignments = Assignment.all
+    @roles = Role.all.order('lower(name)')
+    @users = User.all.order('lower(name)')
+    @client = @assignment.client
   end
 
   # POST /assignments
@@ -51,10 +55,16 @@ class AssignmentsController < ApplicationController
   # PATCH/PUT /assignments/1
   # PATCH/PUT /assignments/1.json
   def update
+    @roles = Role.all
+    if params[:free_system_input].present?
+      new_role = Role.create(name: params[:free_system_input])
+      @assignment.role_id = new_role.id
+    end 
     respond_to do |format|
       if @assignment.update(assignment_params)
         format.html { redirect_to @assignment, notice: 'Assignment was successfully updated.' }
         format.json { head :no_content }
+        format.js { render layout: false }
       else
         format.html { render action: 'edit' }
         format.json { render json: @assignment.errors, status: :unprocessable_entity }

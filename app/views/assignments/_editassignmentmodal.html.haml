@@ -1,0 +1,9 @@
+#editAssignmentModal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1", "aria-labelledby" => "editAssignmentLabel"}
+  .modal-dialog
+    .modal-content
+      .modal-body 
+        =render 'clients/assignmentform', assignment: @assignment, client: @client, users: @users, roles: @roles
+      
+
+
+   

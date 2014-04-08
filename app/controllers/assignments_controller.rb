@@ -25,7 +25,6 @@ class AssignmentsController < ApplicationController
 
   # GET /assignments/1/edit
   def edit
-    @assignments = Assignment.all
     @roles = Role.all.order('lower(name)')
     @users = User.all.order('lower(name)')
     @client = @assignment.client

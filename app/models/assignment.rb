@@ -7,7 +7,7 @@ class Assignment < ActiveRecord::Base
   default_scope includes(:user).order('users.name')
 
   def self.of(client)
-    Assignment.where(client: client)
+    Assignment.where(client: client).includes(:role)
   end
 
 end

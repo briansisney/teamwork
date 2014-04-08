@@ -20,7 +20,7 @@
         %th End time
         %th
       
-      - @client.assignments.each do |assignment|
+      - @assignments.each do |assignment|
         =render "assignments/assignment", assignment: assignment    
   .col-md-6
     %h4 Make Assignment

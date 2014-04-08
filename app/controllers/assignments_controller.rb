@@ -10,7 +10,7 @@ class AssignmentsController < ApplicationController
     @users = User.all.order(:name)
     @clients = Client.all.order(:name)
     @role = Role.new
-
+    @client = Client.first #FIXME
   end
 
   # GET /assignments/1

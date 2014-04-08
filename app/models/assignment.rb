@@ -5,4 +5,9 @@ class Assignment < ActiveRecord::Base
   
   validates :user, :client, :role, presence: true
   default_scope includes(:user).order('users.name')
+
+  def self.of(client)
+    Assignment.where(client: client)
+  end
+
 end

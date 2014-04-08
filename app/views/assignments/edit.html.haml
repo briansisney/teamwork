@@ -5,6 +5,6 @@
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
         %h4.modal-title Edit Assignment
       .modal-body 
-        =render 'clients/assignmentform', assignment: @assignment, client: @client, users: @users, roles: @roles
+        =render 'assignments/form', assignment: @assignment, client: @client, users: @users, roles: @roles
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close

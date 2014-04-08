@@ -1,0 +1,6 @@
+(function () {
+  var updateClientHtml = "<%= j render(partial: 'clientname', locals: {client: @client})%>";
+  $('.client_name').replaceWith(updateClientHtml);
+  $('#updateClientModal').modal('hide');
+
+})();

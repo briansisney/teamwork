@@ -3,7 +3,12 @@
     %h1.fa.fa-briefcase
     / image_proof(@client.image)
   .col-md-10
-    %h1=@client.name
+    =render 'clientname', client: @client
+    .edit_name
+      %i.fa.fa-pencil{"data-toggle" => "modal", "data-target" => "#updateClientModal"}
+      
+
+
 .row
   .col-md-6
     %h4 Current Assignments
@@ -22,6 +27,5 @@
     =render 'clients/assignmentform' 
   
 
-= link_to 'Edit', edit_client_path(@client)
-\|
+=render 'clients/updateclientmodal'
 = link_to 'Back', clients_path

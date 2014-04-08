@@ -4,20 +4,4 @@
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
         %h4.modal-title New Client
-      = form_for @client, remote: true do |f|
-        .modal-body  
-          - if @client.errors.any?
-            #error_explanation
-              %h2= "#{pluralize(@client.errors.count, "error")} prohibited this client from being saved:"
-              %ul
-                - @client.errors.full_messages.each do |msg|
-                  %li= msg
-          .field
-            = f.label :name
-            = f.text_field :name
-      
-        .modal-footer
-          .actions
-            %button.btn.btn-primary
-              Save
-            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+      =render 'form', client: @client

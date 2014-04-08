@@ -1,13 +1,17 @@
 = form_for @client, remote: true do |f|
-  - if @client.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@client.errors.count, "error")} prohibited this client from being saved:"
-      %ul
-        - @client.errors.full_messages.each do |msg|
-          %li= msg
+  .modal-body  
+    - if @client.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@client.errors.count, "error")} prohibited this client from being saved:"
+        %ul
+          - @client.errors.full_messages.each do |msg|
+            %li= msg
+    .field
+      = f.label :name
+      = f.text_field :name
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .actions
-    = f.submit 'Save'
+  .modal-footer
+    .actions
+      %button.btn.btn-primary
+        Save
+      %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close

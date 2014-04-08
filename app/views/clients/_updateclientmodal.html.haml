@@ -1,0 +1,7 @@
+#updateClientModal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1", "aria-labelledby" => "updateclientModalLabel"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
+        %h4.modal-title Update Client
+      =render 'form', client: @client

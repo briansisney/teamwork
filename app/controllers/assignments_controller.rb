@@ -30,14 +30,12 @@ class AssignmentsController < ApplicationController
   # POST /assignments
   # POST /assignments.json
   def create
+    @roles = Role.all
     @assignment = Assignment.new(assignment_params)
     if params[:free_system_input].present?
       new_role = Role.create(name: params[:free_system_input])
       @assignment.role_id = new_role.id
     end  
-    @roles = Role.all
-    @users = User.all
-    @clients = Client.all
     respond_to do |format|
       if @assignment.save
         format.html { redirect_to @assignment, notice: 'Assignment was successfully created.' }

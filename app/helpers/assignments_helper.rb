@@ -21,5 +21,13 @@ module AssignmentsHelper
     end
     
   end
+  def make_collection(assignment)
+    array = []
+    assignment.each do |record|
+      small_array=[]
+      2.times{small_array<<record.name}
+      array<<small_array
+    end
+  end
 end
 

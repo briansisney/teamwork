@@ -28,7 +28,6 @@ class AssignmentsController < ApplicationController
     @roles = Role.all.order('lower(name)')
     @users = User.all.order('lower(name)')
     @client = @assignment.client
-    render '_form'
   end
 
   # POST /assignments
@@ -58,15 +57,21 @@ class AssignmentsController < ApplicationController
   # PATCH/PUT /assignments/1.json
   def update
     @roles = Role.all
-    if params[:free_system_input].present?
-      new_role = Role.create(name: params[:free_system_input])
-      @assignment.role_id = new_role.id
-    end 
     respond_to do |format|
       if @assignment.update(assignment_params)
-        format.html { redirect_to :back, notice: 'Assignment was successfully updated.' }
-        format.json { head :no_content }
-        format.js { render layout: false }
+        if params[:free_system_input].present?
+          new_role = Role.create(name: params[:free_system_input])
+          @assignment.role_id = new_role.id
+        end  
+        if @assignment.save
+          format.html { redirect_to :back, notice: 'Assignment was successfully updated.' }
+          format.json { head :no_content }
+          format.js { render layout: false }
+        else
+          format.html { redirect_to :back, notice: 'Assignment was not updated with new Role.' }
+          format.json { render json: @assignment.errors, status: :unprocessable_entity }
+        end
+        
       else
         format.html { redirect_to :back, notice: 'Assignment was not updated.' }
         format.json { render json: @assignment.errors, status: :unprocessable_entity }

@@ -66,6 +66,8 @@ gem 'bootstrap-sass', '~> 3.1.1.0'
 gem 'bootflat-rails', '~> 0.1.8'
 gem 'sass', '~> 3.3.4'
 
+gem 'simple_form'
+
 gem 'best_in_place'
 gem 'rails4_client_side_validations', '~> 0.0.3'
 # Use ActiveModel has_secure_password

@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140405170905) do
     t.integer  "client_id"
     t.integer  "role_id"
     t.datetime "start_date"
-    t.datetime "end_time"
+    t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

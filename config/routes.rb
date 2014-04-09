@@ -1,5 +1,5 @@
 Teamwork::Application.routes.draw do
-  root 'users#index'
+  root 'clients#index'
 
   resources :assignments
 

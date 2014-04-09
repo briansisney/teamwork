@@ -1,42 +1,13 @@
-= form_for @assignment, remote: true do |f|
-  - if @assignment.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@assignment.errors.count, "error")} prohibited this assignment from being saved:"
-      %ul
-        - @assignment.errors.full_messages.each do |msg|
-          %li= msg
-  .field  
-    = f.label :user
-    / = f.text_field :user
-    .user_section
-      -@users.each do |user|
-        .user_form_wrapper
-          =user.name
-          = f.radio_button(:user_id, user.id, :class => "form_button")
-      =link_to("New User", users_path, :class => "user_form_wrapper")
-  .field
-    =f.hidden_field :client_id, value: @client.id
 
-  .field
-    
-    = f.label :role
-    .role_section
-      .original_roles
-        -@roles.each do |role|
-          .role_form_wrapper.clickable_role
-            =role.name
-            = f.radio_button(:role_id, role.id, :class => "form_button")   
-      .clickable_role#role_text 
-        =f.label "Don't see a role? Add one here:"   
-        = f.radio_button :role, nil, :id => :hidden_radio, :style => "display:none"
-        = text_field_tag :free_system_input
-
-       
-  .field
-    .start_time
-      = f.label :start_date
-      = f.date_field :start_date, :class => "inline", :value => Time.now.strftime("%Y-%m-%d")
-    .end_time
-      = f.label :end_time
-      = f.date_field :end_time, :class => "inline"
-  %button.btn.btn-default.formsubmit{:type => "submit"} Save
+= simple_form_for(@assignment, html: {class: 'form-inline' }) do |f|
+  =f.error_notification
+  =f.association :user, label_method: :name, value_method: :id, include_blank: false, prompt: "Select employee"
+  .roles
+    =f.association :role, label_method: :name, value_method: :id, include_blank: false, as: :radio_buttons, style: "display:inline", wrapper_html: { class: 'role_section' }
+    =f.label "Don't see a role? Add one here:"   
+    = f.radio_button :role, nil, :id => :hidden_radio, :style => "display:none", :class => "radio"
+    #anti.radio= text_field_tag :free_system_input
+  =f.hidden_field :client_id, value: @client.id
+  =f.input :start_date, as: :date
+  =f.input :end_date, as: :date
+  = f.button :submit

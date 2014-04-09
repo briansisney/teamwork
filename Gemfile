@@ -68,6 +68,12 @@ gem 'sass', '~> 3.3.4'
 
 gem 'simple_form'
 
+gem 'datetimepicker-rails', :require => 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git'
+
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+                              :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+gem 'i18n_alchemy'
+gem 'virtus'
 gem 'best_in_place'
 gem 'rails4_client_side_validations', '~> 0.0.3'
 # Use ActiveModel has_secure_password

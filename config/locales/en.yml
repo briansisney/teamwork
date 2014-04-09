@@ -20,4 +20,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  datepicker:
+    dformat: '%m/%d/%Y'        # display format of the date (this is the default, can be ommited)
+    pformat: 'MM/dd/yyyy'      # picking format of the date (this is the default, can be ommited)
+    weekstart: 0  
+  date:
+      formats:
+        default: "%m/%d/%Y"
+
+  time:
+    formats:
+      default: "%m/%d/%Y %H:%M:%S"
+
+  number:
+    format:
+      separator: '.'
+      delimiter: ','
+      precision: 2

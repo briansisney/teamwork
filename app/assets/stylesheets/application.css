@@ -11,5 +11,7 @@
  *= require bootflat
  *= require font-awesome
  *= require_self
+ *= require bootstrap-datetimepicker
+ *= require bootstrap-datepicker
  *= require_tree .
  */

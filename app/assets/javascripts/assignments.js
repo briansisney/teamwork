@@ -28,6 +28,15 @@ $(document).on('ajax:success', function(xhr, data, status) {
     $('.radio').removeClass('selected_role');
     $(this).addClass('selected_role');
   });
+  $('.input-daterange').datepicker({
+      format: 'dd/mm/yyyy'});
 });
 
-
+// $(function() {
+//   $('input.datepicker').datepicker();
+// });
+$(document).ready(function(){
+    // $('[data-behaviour~=datepicker]').datepicker();
+    $('.input-daterange').datepicker({
+      format: 'dd/mm/yyyy'});
+  });

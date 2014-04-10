@@ -21,12 +21,12 @@
 
 en:
   datepicker:
-    dformat: '%m/%d/%Y'        # display format of the date (this is the default, can be ommited)
-    pformat: 'MM/dd/yyyy'      # picking format of the date (this is the default, can be ommited)
+    dformat: 'yyyy/mm/dd'        # display format of the date (this is the default, can be ommited)
+    pformat: 'yyyy/mm/dd'      # picking format of the date (this is the default, can be ommited)
     weekstart: 0  
   date:
       formats:
-        default: "%m/%d/%Y"
+        default: 'yyyy/mm/dd'
 
   time:
     formats:

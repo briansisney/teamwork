@@ -7,7 +7,7 @@ $(document).on('ready page:load', function() {
     $(this).addClass('selected_role');
   });
   $('.input-daterange').datepicker({
-      format: 'dd/mm/yyyy'});
+      format: 'yyyy-mm-dd'});
   
 });
 
@@ -30,6 +30,6 @@ $(document).on('ajax:success', function(xhr, data, status) {
     $(this).addClass('selected_role');
   });
   $('.input-daterange').datepicker({
-      format: 'dd/mm/yyyy'});
+      format: 'yyyy-mm-dd'});
 });
 

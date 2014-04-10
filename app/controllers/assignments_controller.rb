@@ -39,8 +39,7 @@ class AssignmentsController < ApplicationController
     if params[:free_system_input].present?
       new_role = Role.create(name: params[:free_system_input])
       @assignment.role_id = new_role.id
-    end  
-
+    end 
     respond_to do |format|
       if @assignment.save
         format.html { redirect_to :back, notice: 'Assignment was successfully created.' }
@@ -57,6 +56,7 @@ class AssignmentsController < ApplicationController
   # PATCH/PUT /assignments/1.json
   def update
     @roles = Role.all
+    @assignment = Assignment.find(params[:id])
     respond_to do |format|
       if @assignment.update(assignment_params)
         if params[:free_system_input].present?

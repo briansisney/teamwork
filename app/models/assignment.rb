@@ -5,7 +5,7 @@ class Assignment < ActiveRecord::Base
   
   validates :user, :client, :role, presence: true
   validates_uniqueness_of :user_id, :scope => :client_id
-  default_scope includes(:user).order('users.name')
+  default_scope {includes(:user).order('users.name')}
 
   def self.of(client)
     Assignment.where(client: client).includes(:role)

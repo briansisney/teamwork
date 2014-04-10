@@ -189,24 +189,6 @@ th{
   display: block;
 
 }
-// .radio {
-//   // display: inline-block;
-//   color: #000;
-//   text-align: center;
-//   padding: 5px;
-//   width: 115px;
-//   height: 50px;
-//   margin: 5px;
-//   background-color: white;
-//   // display: table-cell;
-//     float: left;
-//   // vertical-align: middle;
-//   box-shadow: inset -1px -1px 3px #53bc9c;
-//   &:hover{
-//     background: #53bc9c;
-//     color: white !important;
-//   }
-// }
 
 .field{
   .a{
@@ -223,6 +205,5 @@ a{
 }
 .user_section, .role_section{
   clear: both;
-    // float: left;
-    display: inline-block;
-  }
+  display: inline-block;
+}

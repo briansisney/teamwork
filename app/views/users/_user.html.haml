@@ -1,11 +1,8 @@
-%button.col-md-2.pane.index-pane{"data-target" => "##{dom_id(user, :infos)}", "data-toggle" => "modal"}
+.index-pane.col-md-2.pane{"data-target" => "##{dom_id(user, :infos)}", "data-toggle" => "modal"}
   %i.fa.fa-user.form-icon 
   %h4=user.name
   =user.clients.count
   clients
-  %br
-  =user.roles.count
-  roles
   %br
 =render 'users/infoModal', user: user 
  

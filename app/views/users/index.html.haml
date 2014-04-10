@@ -1,13 +1,14 @@
-%h1 Users
-.userlist
-  - @users.each do |user|
-    =render 'users/user', user: user
-  %br
-
-%button.btn.col-md-2.pane.index-pane{"data-toggle" => "modal", "data-target" => "#newUserModal"}
-  %i.fa.fa-user.form-icon 
-  %h4 New User
+.row
+  .col-md-6
+    %h1#title.pane
+      %i.fa.fa-user
+      Users
+.row
+  .userlist
+    - @users.each do |user|
+      =render 'users/user', user: user
+  .index-pane.col-md-2.pane{"data-toggle" => "modal", "data-target" => "#newUserModal"}
+    %i.fa.fa-user.form-icon 
+    %h4 New User
 =render 'users/modal'
 
-
-  

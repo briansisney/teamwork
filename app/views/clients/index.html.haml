@@ -1,32 +1,14 @@
 .row
-  %h1 Listing clients
+  .col-md-6
+    %h1#title.pane
+      %i.fa.fa-briefcase
+      Clients
 .row
   .clientlist
     - @clients.each do |client|
       =render 'clients/client', client: client  
-  %button.col-md-2.pane.index-pane{"data-toggle" => "modal", "data-target" => "#newClientModal"}
-      
+  .index-pane.col-md-2.pane{"data-toggle" => "modal", "data-target" => "#newClientModal"}
     %i.fa.fa-briefcase.form-icon 
     %h4 New Client
   =render 'clients/newclientmodal'
-
-        
-
-
-/ %table
-/   %tr
-/     %th Name
-/     %th
-/     %th
-/     %th
-
-  
-/     %tr
-/       %td
-/       %td
-/       %td= link_to 'Edit', edit_client_path(client)
-/       %td= link_to 'Destroy', client, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-/ %br
-
 

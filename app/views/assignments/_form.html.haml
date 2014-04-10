@@ -1,18 +1,18 @@
 
 = simple_form_for(@assignment, html: {class: 'form-inline' }) do |f|
   =f.error_notification
-  =f.association :user, label_method: :name, value_method: :id, include_blank: false, prompt: "Select employee"
+  =f.association :user, label_method: :name, value_method: :id, include_blank: false, prompt: "Select employee", label: 'Employee:'
   .roles
-    =f.association :role, label_method: :name, value_method: :id, include_blank: false, as: :radio_buttons, style: "display:inline", wrapper_html: { class: 'role_section' }
+    =f.association :role, label_method: :name, value_method: :id, include_blank: false, as: :radio_buttons, style: "display:inline", wrapper_html: { class: 'role_section' }, label: 'Role:'
     .add_new_role
       =f.label "Don't see a role? Add one here:"   
       = f.radio_button :role, nil, :id => :hidden_radio, :style => "display:none", :class => "radio"
       #anti.radio= text_field_tag :free_system_input
   =f.hidden_field :client_id, value: @client.id
   #datepicker.input-daterange.input-group
-    =f.input :start_date, :as => :string
+    =f.input :start_date, :as => :string, label: 'Start Date:'
     %span.input-group-addon 
       .minibox to
-    =f.input :end_date, :as => :string
+    =f.input :end_date, :as => :string, label: 'End Date:'
   .buttoncontainer  
     = f.button :submit

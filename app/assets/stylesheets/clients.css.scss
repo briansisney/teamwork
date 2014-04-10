@@ -3,12 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .form-icon {
- font-size: 4em;
+  font-size: 4em;
   margin-top: 10px;
-  color: purple;
 }
-.ending{
-  clear: both;
+.index-pane{
+  height: 196px;
+  text-align: center;
+  margin: 15px;
+  padding: 5px;
+  color: #0d83dd;
+  h4{
+    font-size: 28px; 
+    font-weight: 600;
+  }
+  &:hover{
+    color: #8e44ad; 
+  }
 }
-
 

@@ -1,5 +1,5 @@
 .row
-  .col-md-6
+  .col-md-12
     #title.pane
       %i.fa.fa-briefcase
       %h1 Clients
@@ -7,7 +7,7 @@
   .clientlist
     - @clients.each do |client|
       =render 'clients/client', client: client  
-  .index-pane.col-md-2.pane{"data-toggle" => "modal", "data-target" => "#newClientModal"}
+  .index-pane.col-xs-12.col-lg-2.col-md-3.col-sm-4.pane{"data-toggle" => "modal", "data-target" => "#newClientModal"}
     %i.fa.fa-briefcase
     %h4 New Client
   =render 'clients/newclientmodal'

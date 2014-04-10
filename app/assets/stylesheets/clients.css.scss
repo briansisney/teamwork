@@ -1,16 +1,7 @@
 // Place all the styles related to the clients controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.pane{
-  background: white;
-  height: 196px;
-  // width: 100%;
-  box-shadow: 2px 2px 3px 1px grey;
-  // border-radius: 5%;
-  padding: 5px;
-  text-align: center;
-  margin: 10px;
-}
+
 .form-icon {
  font-size: 4em;
   margin-top: 10px;
@@ -19,11 +10,5 @@
 .ending{
   clear: both;
 }
-.client_name{
-  // border: red 1px solid;
-  display: inline-block;
-}
-.edit_name {
-  display: inline-block;
-  padding-left: 5px;
-}
+
+

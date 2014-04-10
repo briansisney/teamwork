@@ -1,6 +1,159 @@
 // Place all the styles related to the Assignments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.show_box{
+  padding: 20px;
+  margin-bottom: 20px;
+  h4{
+    color: #8e44ad;
+    font-size: 28px; 
+    font-weight: 600;
+  }
+  .make_asignment{
+    border-bottom: 1px solid #dddddd;
+  } 
+}
+.select.required.control-label{
+
+}
+form{
+  .control-group.select.required.assignment_user{
+    label{
+      color: #0d83dd;
+      font-size: 18px;
+      font-weight:700;
+      margin-bottom: 5px;
+      margin-top: 10px;
+    }
+    .controls{
+      #assignment_user_id.select.required{
+
+      }
+    }
+  }
+  .input-daterange.input-group{
+    .control-group.string.optional.assignment_start_date{
+      .string.optional.control-label{
+        color: #0d83dd;
+        font-size: 18px;
+        font-weight:700;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+    }
+    .input-group-addon{
+      .minibox{
+        background-color:#0d83dd;
+        border-color:#d9edf7;
+        border: 1px solid #d9edf7;
+        width:50px;
+        height: 27px;
+        line-height: 25px;
+      }
+      background-color: #fff;
+      border-color:#fff;
+      border: none;
+      width:0%;
+      padding: 0px;
+      vertical-align: bottom;
+      
+    }
+    .control-group.string.optional.assignment_end_date{
+      .string.optional.control-label{
+        color: #0d83dd;
+        font-size: 18px;
+        font-weight:700;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .buttoncontainer {
+    height: 45px;
+    display: block;
+    input.btn{
+
+      background-color:#8e44ad;
+      margin-top: 10px;
+      float: right;
+    } 
+  }
+   
+}
+.cancel_container{
+  height: 20px;
+  a.cancel{
+    color: #8e44ad;
+    float: right;
+  }
+  
+}
+.roles{
+  .control-group.radio_buttons.required.assignment_role.role_section{
+    label.radio_buttons.required.control-label{
+      display: block;
+      color: #0d83dd;
+      font-size: 18px;
+      font-weight:700;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    .controls{
+      label.radio{
+        margin: 0px;
+        // border: 1px solid gray;
+        font-size: 14px;
+        color: #0d83dd;
+        text-align: center;
+        padding: 5px;
+        width: 118px;
+        height: 50px;
+        margin:0px 8px 8px 0px;
+        // margin-left: auto ;
+        // margin-right: auto ;
+        background-color: white;
+        font-weight:600;
+        // background-color: #d9edf7;
+        // line-height: 50px;
+        // display: table-cell;
+        // float: left;
+        // vertical-align: middle;
+        box-shadow: 2px 2px 5px 1px #d9edf7;
+        &:hover{
+          background: #0d83dd;
+          color: white !important;
+        }
+      }
+    }
+    .selected_role {
+      background: #0d83dd !important;
+      color: white !important;
+    }
+  }
+  .add_new_role{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: inline-block;
+    .string.optional.control-label{
+      color: #0d83dd;
+      
+    }
+    #anti.radio{
+      #free_system_input{
+        display: inline-block;
+      }
+    }
+  }
+  
+}
+
+th{
+  color: #0d83dd;
+  font-size: 18px;
+  font-weight:700;
+}
+
 .radio_buttons{
   display: none;
 }
@@ -26,9 +179,7 @@
 #free_system_input{
   color: black;
 }
-h4{
-  color: black;
-}
+
 #anti.radio{
   clear: both;
   width: 148px;
@@ -38,29 +189,25 @@ h4{
   display: block;
 
 }
-.radio {
-  
-  // display: inline-block;
-  color: #000;
-  text-align: center;
-  padding: 5px;
-  width: 115px;
-  height: 50px;
-  margin: 5px;
-  background-color: white;
-  // display: table-cell;
-    float: left;
-  // vertical-align: middle;
-  box-shadow: inset -1px -1px 3px #53bc9c;
-  &:hover{
-    background: #53bc9c;
-    color: white !important;
-  }
-}
-.selected_role {
-  background: #53bc9c;
-  color: white !important;
-}
+// .radio {
+//   // display: inline-block;
+//   color: #000;
+//   text-align: center;
+//   padding: 5px;
+//   width: 115px;
+//   height: 50px;
+//   margin: 5px;
+//   background-color: white;
+//   // display: table-cell;
+//     float: left;
+//   // vertical-align: middle;
+//   box-shadow: inset -1px -1px 3px #53bc9c;
+//   &:hover{
+//     background: #53bc9c;
+//     color: white !important;
+//   }
+// }
+
 .field{
   .a{
   display: table-cell;

@@ -4,4 +4,5 @@ class Client < ActiveRecord::Base
   has_many :roles, through: :assignments
 
   validates :name, uniqueness: true, presence: true
+  mount_uploader :logo, ImageUploader
 end

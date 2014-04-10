@@ -13,7 +13,7 @@ end
 gem 'chronic'
 
 # Use RMagick to manipulate images
-gem 'rmagick'
+gem 'rmagick', :require => 'RMagick'
 # Use Carrierwave to allow Rmagick to manipulate images
 gem 'carrierwave'
 # Use for uploading picture in Ajax request in form with 'remote: true'

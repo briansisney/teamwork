@@ -14,3 +14,11 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+# Ignore file uploads
+public/uploads
+
+# Ignore application configuration
+/config/application.yml
+
+# Ignore application configuration
+/config/application.yml

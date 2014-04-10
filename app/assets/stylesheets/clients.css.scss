@@ -2,10 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.form-icon {
-  font-size: 4em;
-  margin-top: 10px;
-}
+
 .index-pane{
   height: 196px;
   text-align: center;
@@ -18,6 +15,13 @@
   }
   &:hover{
     color: #8e44ad; 
+  }
+  img{
+    margin: 10px 5px 0px 5px;
+  }
+  i{
+    font-size: 4em;
+    margin-top: 10px;
   }
 }
 

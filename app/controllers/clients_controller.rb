@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
-
+  skip_before_filter  :verify_authenticity_token
   # GET /clients
   # GET /clients.json
   def index
@@ -30,6 +30,7 @@ class ClientsController < ApplicationController
   # POST /clients
   # POST /clients.json
   def create
+
     @client = Client.new(client_params)
 
     respond_to do |format|
@@ -77,6 +78,6 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:name)
+      params.require(:client).permit(:name, :logo)
     end
 end

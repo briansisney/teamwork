@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140405170905) do
 
   create_table "clients", force: true do |t|
     t.string   "name"
+    t.string   "logo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

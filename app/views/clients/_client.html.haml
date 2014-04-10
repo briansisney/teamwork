@@ -1,5 +1,5 @@
 =link_to client, :class => 'index-pane col-md-2 pane' do
-  %i.fa.fa-briefcase.form-icon 
+  =display_logo(client.logo_url(:thumb))
   %h4= client.name
   =client.users.count
   team members

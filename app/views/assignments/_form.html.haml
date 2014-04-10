@@ -5,7 +5,7 @@
   .roles
     =f.association :role, label_method: :name, value_method: :id, include_blank: false, as: :radio_buttons, style: "display:inline", wrapper_html: { class: 'role_section' }, label: 'Role:'
     .add_new_role
-      =f.label "Don't see a role? Add one here:"   
+      %label Don't see a role? Add one here:   
       = f.radio_button :role, nil, :id => :hidden_radio, :style => "display:none", :class => "radio"
       #anti.radio= text_field_tag :free_system_input
   =f.hidden_field :client_id, value: @client.id

@@ -25,3 +25,32 @@
   }
 }
 
+button.btn.btn-primary{
+  background: #8e44ad;
+  border: 1px solid #8e44ad;
+  &:hover{
+    color: #8e44ad;
+    background:white;
+  }
+}
+button.btn.btn-default{
+  color: #8e44ad;
+  border-color: #8e44ad !important;
+}
+.modal-title{
+  color: #8e44ad;
+}
+.modal-body{
+  .field{
+    color: #8e44ad;
+  }
+}
+.field.inline{
+  margin-top:10px;
+  input[type="file"]{
+    display: inline-block;
+  }
+  label{
+    margin-right: 7px;
+  }
+}

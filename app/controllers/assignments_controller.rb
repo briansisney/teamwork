@@ -33,8 +33,9 @@ class AssignmentsController < ApplicationController
   # POST /assignments
   # POST /assignments.json
   def create
-    
+    @client  = Client.find(assignment_params[:client_id])
     @roles = Role.all
+    @assignments = Assignment.of(@client)
     @assignment = Assignment.new(assignment_params)
     if params[:free_system_input].present?
       new_role = Role.create(name: params[:free_system_input])
@@ -42,11 +43,11 @@ class AssignmentsController < ApplicationController
     end 
     respond_to do |format|
       if @assignment.save
-        format.html { redirect_to :back, notice: 'Assignment was successfully created.' }
+        format.html { redirect_to @client, notice: 'Assignment was successfully created.' }
         format.json { render action: 'show', status: :created, location: @assignment }
-        format.js { render layout: false }
+        # format.js { render layout: false }
       else
-        format.html { redirect_to :back, error: 'Assignment was not created.'}
+        format.html { render 'clients/show.html.haml', error: 'Assignment was not created.'}
         format.json { render json: @assignment.errors, status: :unprocessable_entity }
       end
     end
@@ -55,6 +56,8 @@ class AssignmentsController < ApplicationController
   # PATCH/PUT /assignments/1
   # PATCH/PUT /assignments/1.json
   def update
+    @client  = Client.find(assignment_params[:client_id])
+    @assignments = Assignment.of(@client)
     @roles = Role.all
     @assignment = Assignment.find(params[:id])
     respond_to do |format|

@@ -1,7 +1,15 @@
 // Place all the styles related to the Assignments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.help-inline{
+  color: red;
+  padding-left:10px;
+}
+.alert.alert-error{
+  color: red;
+  font-size: 18px;
+  padding-left:0px;
+}
 .show_box{
   padding: 20px;
   margin-bottom: 20px;

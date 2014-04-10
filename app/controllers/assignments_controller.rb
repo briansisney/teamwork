@@ -67,16 +67,16 @@ class AssignmentsController < ApplicationController
           @assignment.role_id = new_role.id
         end  
         if @assignment.save
-          format.html { redirect_to :back, notice: 'Assignment was successfully updated.' }
+          format.html { redirect_to @client, notice: 'Assignment was successfully updated.' }
           format.json { head :no_content }
           format.js { render layout: false }
         else
-          format.html { redirect_to :back, notice: 'Assignment was not updated with new Role.' }
+          format.html { render 'clients/show.html.haml', error: 'Assignment was not updated with new Role.' }
           format.json { render json: @assignment.errors, status: :unprocessable_entity }
         end
         
       else
-        format.html { redirect_to :back, notice: 'Assignment was not updated.' }
+        format.html { render 'clients/show.html.haml', error: 'Assignment was not updated.' }
         format.json { render json: @assignment.errors, status: :unprocessable_entity }
       end
     end

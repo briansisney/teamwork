@@ -6,6 +6,7 @@ $(document).on('ready page:load', function() {
     $('.radio').removeClass('selected_role');
     $(this).addClass('selected_role');
   });
+  $('.roles').find('input:checked').parent().addClass("selected_role");
   $('.input-daterange').datepicker({
       format: 'yyyy-mm-dd'});
   

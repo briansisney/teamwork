@@ -12,12 +12,11 @@
     <%= readable_date(assignment.end_date) %>
   </td>
   <td>
-    <!-- <a data-target="#editAssignmentModal" data-toggle="modal" data-remote="<%= edit_assignment_path(assignment) %> #modal-edit-fields" class="fa fa-pencil"></a> -->
-    <%= link_to assignment_path(assignment.id), :method => :delete, :data => { :confirm => 'Are you sure?' } do %>
-      <i class="fa fa-times"></i>
-    <% end %>
     <%= link_to edit_assignment_path(assignment.id), remote: true do %>
       <i class="fa fa-pencil"></i>
     <% end %>
+    <%= link_to assignment_path(assignment.id), :method => :delete, :data => { :confirm => 'Are you sure?' } do %>
+      <i class="fa fa-times"></i>
+    <% end %> 
   </td>
 </tr>

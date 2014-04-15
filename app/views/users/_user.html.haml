@@ -1,8 +1,9 @@
-.index-pane.col-xs-12.col-lg-2.col-md-3.col-sm-4.pane{"data-target" => "##{dom_id(user, :infos)}", "data-toggle" => "modal"}
-  %i.fa.fa-user 
-  %h4=user.name
-  =user.clients.count
-  clients
-  %br
-=render 'users/infoModal', user: user 
+.col-xs-12.col-lg-3.col-md-4.col-sm-4 
+  .pane.index-pane{"data-target" => "##{dom_id(user, :infos)}", "data-toggle" => "modal"}
+    %i.fa.fa-user 
+    %h4=user.name
+    =user.clients.count
+    clients
+    %br
+  =render 'users/infoModal', user: user 
  

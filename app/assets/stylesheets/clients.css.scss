@@ -1,13 +1,19 @@
 // Place all the styles related to the clients controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.navbar-collapse{
+  padding:0px;
+}
 
 .index-pane{
-  height: 196px;
+  height: 210px;
   text-align: center;
-  margin: 19px;
-  padding: 5px;
+  // margin-bottom: 19px;
+  // padding: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  // position: relative;
+
   color: #0d83dd;
   h4{
     font-size: 28px; 
@@ -23,6 +29,7 @@
     font-size: 4em;
     margin-top: 10px;
   }
+    
 }
 
 button.btn.btn-primary{

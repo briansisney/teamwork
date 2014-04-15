@@ -6,9 +6,11 @@
 .row
   .clientlist
     - @clients.each do |client|
-      =render 'clients/client', client: client  
-  .index-pane.col-xs-12.col-lg-2.col-md-3.col-sm-4.pane{"data-toggle" => "modal", "data-target" => "#newClientModal"}
-    %i.fa.fa-briefcase
-    %h4 New Client
-  =render 'clients/newclientmodal'
+      .col-xs-12.col-lg-3.col-md-4.col-sm-4 
+        =render 'clients/client', client: client
+  .col-xs-12.col-lg-3.col-md-4.col-sm-4  
+    .index-pane.pane{"data-toggle" => "modal", "data-target" => "#newClientModal"}
+      %i.fa.fa-briefcase
+      %h4 New Client
+    =render 'clients/newclientmodal'
 

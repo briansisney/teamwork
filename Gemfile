@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.2.0'
 gem 'rails_12factor', group: :production
 
 group :development do
@@ -8,7 +8,8 @@ group :development do
   gem 'binding_of_caller'
   gem 'hirb'
 end
-
+# AWS
+gem 'aws-sdk', '~> 2'
 # date/time parser
 gem 'chronic'
 
